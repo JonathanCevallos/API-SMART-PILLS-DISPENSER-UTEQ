@@ -53,7 +53,8 @@ public class CarerService {
             String randonCode = RandomString.make(8);
             entity.setVerification_code(randonCode.toUpperCase());
             entity.setState(false);
-            entity.setPassword(BCrypt.hashpw(entity.getPassword(), BCrypt.gensalt()));
+            //entity.setPassword(BCrypt.hashpw(entity.getPassword(), BCrypt.gensalt()));
+            entity.setPassword(entity.getPassword());
             entity = carerRepository.save(entity);
             email(entity);
             return entity;
