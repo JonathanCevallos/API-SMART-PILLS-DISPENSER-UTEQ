@@ -23,7 +23,7 @@ public class CarerService {
     private CarerRepository carerRepository;
 
     @Autowired
-    private JavaMailSender mailSender;
+ private JavaMailSender mailSender;
 
 
     //Este metodo permite listar todos los registro de la entidad.
@@ -62,6 +62,7 @@ public class CarerService {
         }
     }
 
+
     public void email(Carer carer) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
 
@@ -76,6 +77,7 @@ public class CarerService {
 
         mailSender.send(message);
     }
+
 
 
 
@@ -105,26 +107,8 @@ public class CarerService {
         }
     }
 
-    public void sendVerificationEmail(Carer carer) throws MessagingException, UnsupportedEncodingException {
-        String subject = "Please verify your registration";
-        String senderName = "Support Team (SMART PILLS DISPENSER)";
-        String mailContent = "<p>Dear" + carer.getName() + ",</p>";
-        mailContent += "<p>Please enter this code in the application to verify your account:</p>";
-        String code = carer.getVerification_code();
-        mailContent += "<p> <b>"+ code + "</b></p> ";
-        mailContent += "<p>Tank you<br>The Smart Pills Dispenser Team</p>";
 
-        MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message);
-
-        helper.setFrom("smartpillsdispenser@gmail.com", senderName);
-        helper.setTo(carer.getEmail());
-        helper.setSubject(subject);
-        helper.setText(mailContent, true);
-        mailSender.send(message);
-    }
-
-    public Boolean loginString(String email, String pass, Carer carer) {
+/*    public Boolean loginString(String email, String pass, Carer carer) {
         if ((BCrypt.checkpw(pass, carer.getPassword())) && (email == carer.getEmail())) {
             // si es correcta
             return true;
@@ -133,5 +117,5 @@ public class CarerService {
             return false;
         }
 
-    }
+    }*/
 }

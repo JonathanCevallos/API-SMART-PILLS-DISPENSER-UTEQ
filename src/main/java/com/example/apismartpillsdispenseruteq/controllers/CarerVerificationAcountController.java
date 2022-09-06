@@ -17,13 +17,13 @@ public class CarerVerificationAcountController {
     private CarerRepository carerRepository;
 
     //BUSCAR POR EMAIL
-    @RequestMapping(value = "{email}")
+   /* @RequestMapping(value = "{email}")
     public ResponseEntity<Boolean> finfById(@PathVariable("email") String email) {
         try {
             return ResponseEntity.ok().body(carerRepository.existsCarerByEmailAndEmailEqualsAndVerification_codeEquals(email));
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 
 }

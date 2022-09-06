@@ -15,9 +15,6 @@ import java.util.List;
 @CrossOrigin("*")
 public class CarerLoginController {
 
-    @Autowired
-    private CarerRepository carerRepository;
-
 
 
 }
