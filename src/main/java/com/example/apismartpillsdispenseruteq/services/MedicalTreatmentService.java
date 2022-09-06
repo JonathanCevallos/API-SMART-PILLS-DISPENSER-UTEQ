@@ -34,7 +34,7 @@ public class MedicalTreatmentService {
     }
 
     public int maxId (){
-        return (int) medicalTreatmentRepository.count()+1;
+        return (int) medicalTreatmentRepository.count();
     }
 
     //Este metodo permite: guardar
