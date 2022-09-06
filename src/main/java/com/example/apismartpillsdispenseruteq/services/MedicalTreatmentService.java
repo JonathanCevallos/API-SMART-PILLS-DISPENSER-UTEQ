@@ -33,6 +33,10 @@ public class MedicalTreatmentService {
         }
     }
 
+    public int maxId (){
+        return (int) medicalTreatmentRepository.count()+1;
+    }
+
     //Este metodo permite: guardar
     public MedicalTreatment save(MedicalTreatment entity) throws Exception {
         try {
