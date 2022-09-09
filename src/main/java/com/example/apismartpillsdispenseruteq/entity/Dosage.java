@@ -29,15 +29,11 @@ public class Dosage {
     @Column(name = "registration_date")
     private LocalDateTime registration_date;
 
-//    @Temporal(TemporalType.TIMESTAMP)
-//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-//    @Column(name = "date_hour")
-//    private Date date_hour;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "date_hour")
     private Date date_hour;
+
 
     @Column(name = "state")
     private Boolean state = true;
