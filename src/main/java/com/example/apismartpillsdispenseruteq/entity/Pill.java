@@ -33,6 +33,10 @@ public class Pill {
     @Column(name = "state")
     private Boolean state = true;
 
+
+    @Column(name ="url_image")
+    private String url_image;
+
     @PrePersist
     public void PrePersist() {
         registration_date = LocalDateTime.now();
