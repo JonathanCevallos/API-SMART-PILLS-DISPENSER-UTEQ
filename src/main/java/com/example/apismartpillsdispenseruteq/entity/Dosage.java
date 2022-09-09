@@ -1,5 +1,6 @@
 package com.example.apismartpillsdispenseruteq.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,8 +29,13 @@ public class Dosage {
     @Column(name = "registration_date")
     private LocalDateTime registration_date;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+//    @Temporal(TemporalType.TIMESTAMP)
+//    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+//    @Column(name = "date_hour")
+//    private Date date_hour;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @Column(name = "date_hour")
     private Date date_hour;
 
@@ -38,6 +44,9 @@ public class Dosage {
 
     @Column(name ="prescription", length = 200)
     private String prescription;
+
+    @Column(name ="date_dosage", length = 16)
+    private String date_dosage;
 
     @ManyToOne
     @JoinColumn(name = "id_pill")
