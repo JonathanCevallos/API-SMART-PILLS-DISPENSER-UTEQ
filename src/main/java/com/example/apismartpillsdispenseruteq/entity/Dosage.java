@@ -28,6 +28,8 @@ public class Dosage {
     @Column(name = "registration_date")
     private LocalDateTime registration_date;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "date_hour")
     private LocalDateTime date_hour;
 
