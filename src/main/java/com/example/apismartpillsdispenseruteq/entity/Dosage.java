@@ -29,7 +29,7 @@ public class Dosage {
     private LocalDateTime registration_date;
 
     @Column(name = "date_hour")
-    private String date_hour;
+    private LocalDateTime date_hour;
 
     @Column(name = "state")
     private Boolean state = true;
