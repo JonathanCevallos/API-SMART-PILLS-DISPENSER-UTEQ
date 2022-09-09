@@ -31,7 +31,7 @@ public class Dosage {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "date_hour")
-    private LocalDateTime date_hour;
+    private Date date_hour;
 
     @Column(name = "state")
     private Boolean state = true;
