@@ -22,28 +22,20 @@ public class Dosage {
     @Column(name = "id")
     private int id;
 
+    @Column(name = "quantity")
+    private int quantity;
 
     @Column(name = "registration_date")
     private LocalDateTime registration_date;
 
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @Column(name = "end_date")
-    private Date endDate;
-
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @Column(name = "start_date")
-    private Date starDate;
-
-    @Column(name = "quantity")
-    private int quantity;
-
-    @Column(name = "hour")
-    private String hour;
+    @Column(name = "date_hour")
+    private String date_hour;
 
     @Column(name = "state")
     private Boolean state = true;
+
+    @Column(name ="prescription", length = 200)
+    private String prescription;
 
     @ManyToOne
     @JoinColumn(name = "id_pill")

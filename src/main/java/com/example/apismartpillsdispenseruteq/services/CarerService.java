@@ -2,7 +2,6 @@ package com.example.apismartpillsdispenseruteq.services;
 
 import com.example.apismartpillsdispenseruteq.entity.Carer;
 import com.example.apismartpillsdispenseruteq.repositories.CarerRepository;
-import com.example.apismartpillsdispenseruteq.utils.BCrypt;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +21,7 @@ public class CarerService {
     private CarerRepository carerRepository;
 
     @Autowired
- private JavaMailSender mailSender;
-
+    private JavaMailSender mailSender;
 
     //Este metodo permite listar todos los registro de la entidad.
     public List<Carer> findAll() throws Exception {
@@ -73,13 +70,11 @@ public class CarerService {
         helper.setTo(carer.getEmail());
         helper.setSubject("ACCOUNT VERIFICATION");
         String content = "Hi " + carer.getName() + " welcome to smart pills dispenser. To verify your account enter the following code in the application." +
-                "   CODE: "+carer.getVerification_code();
+                "   CODE: " + carer.getVerification_code();
         helper.setText(content);
 
         mailSender.send(message);
     }
-
-
 
 
     //Este metodo permite: Actualizar mediante ID
