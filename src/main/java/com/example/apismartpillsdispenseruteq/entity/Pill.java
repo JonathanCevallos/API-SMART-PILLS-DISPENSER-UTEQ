@@ -28,17 +28,17 @@ public class Pill {
 
 
     @Column(name = "registration_date")
-    private LocalDateTime registration_date;
+    private LocalDateTime registrationDate;
 
     @Column(name = "state")
     private Boolean state = true;
 
 
     @Column(name ="url_image")
-    private String url_image;
+    private String urlImage;
 
     @PrePersist
     public void PrePersist() {
-        registration_date = LocalDateTime.now();
+        registrationDate = LocalDateTime.now();
     }
 }

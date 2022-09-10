@@ -27,22 +27,22 @@ public class Dosage {
     private int quantity;
 
     @Column(name = "registration_date")
-    private LocalDateTime registration_date;
+    private LocalDateTime registrationDate;
 
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "date_hour")
-    private Date date_hour;
+    private Date dateHour;
 
 
     @Column(name = "state")
-    private Boolean state = true;
+    private Boolean state=true;
 
     @Column(name ="prescription", length = 200)
     private String prescription;
 
-    @Column(name ="date_dosage", length = 16)
-    private String date_dosage;
+    @Column(name ="date_take", length = 16)
+    private String dateTake;
 
     @ManyToOne
     @JoinColumn(name = "id_pill")
@@ -54,7 +54,7 @@ public class Dosage {
 
     @PrePersist
     public void PrePersist() {
-        registration_date = LocalDateTime.now();
+        registrationDate = LocalDateTime.now();
     }
 
 }

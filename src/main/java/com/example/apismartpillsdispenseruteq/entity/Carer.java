@@ -26,13 +26,13 @@ public class Carer {
     private Boolean state = true;
 
     @Column(name = "registration_date")
-    private LocalDateTime registration_date;
+    private LocalDateTime registrationDate;
 
     @Column(name = "name", length = 70)
     private String name;
 
     @Column(name = "phone_number", length = 15)
-    private String phone_number;
+    private String phoneNumber;
 
     @Column(name = "email", length = 50)
     private String email;
@@ -41,13 +41,13 @@ public class Carer {
     private String password;
 
     @Column(name="verification_code",length = 8, updatable = false)
-    private String verification_code;
+    private String verificationCode;
 
     @Column(name = "url_image")
-    private String url_image;
+    private String urlImage;
 
     @PrePersist
     public void PrePersist() {
-        registration_date = LocalDateTime.now();
+        registrationDate = LocalDateTime.now();
     }
 }

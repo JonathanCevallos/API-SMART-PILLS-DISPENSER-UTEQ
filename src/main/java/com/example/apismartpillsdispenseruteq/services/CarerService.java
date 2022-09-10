@@ -48,7 +48,7 @@ public class CarerService {
         try {
             //numero random para la verificacion por correo electronico
             String randonCode = RandomString.make(8);
-            entity.setVerification_code(randonCode.toUpperCase());
+            entity.setVerificationCode(randonCode.toUpperCase());
             entity.setState(false);
             //entity.setPassword(BCrypt.hashpw(entity.getPassword(), BCrypt.gensalt()));
             entity.setPassword(entity.getPassword());
@@ -70,7 +70,7 @@ public class CarerService {
         helper.setTo(carer.getEmail());
         helper.setSubject("ACCOUNT VERIFICATION");
         String content = "Hi " + carer.getName() + " welcome to smart pills dispenser. To verify your account enter the following code in the application." +
-                "   CODE: " + carer.getVerification_code();
+                "   CODE: " + carer.getVerificationCode();
         helper.setText(content);
 
         mailSender.send(message);

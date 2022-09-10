@@ -31,7 +31,7 @@ public class Doctor {
     private boolean state = true;
 
     @Column(name = "phone_number", length = 15)
-    private String phone_number;
+    private String phoneNumber;
 
     @Column(name = "email", length = 50)
     private String email;
@@ -40,11 +40,11 @@ public class Doctor {
     private String direction;
 
     @Column(name = "registration_date")
-    private LocalDateTime registration_date;
+    private LocalDateTime registrationDate;
 
 
     @PrePersist
     public void PrePersist() {
-        registration_date = LocalDateTime.now();
+        registrationDate = LocalDateTime.now();
     }
 }

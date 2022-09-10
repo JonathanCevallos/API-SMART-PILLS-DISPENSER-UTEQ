@@ -22,7 +22,7 @@ public class Patient {
     @Column(name = "id")
     private int id;
     @Column(name = "registration_date")
-    private LocalDateTime registration_date;
+    private LocalDateTime registrationDate;
 
     @Column(name = "state")
     private Boolean state = true;
@@ -36,7 +36,7 @@ public class Patient {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "birth_date")
-    private Date birth_date;
+    private Date birthDate;
 
 
     //@ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -51,7 +51,7 @@ public class Patient {
 
     @PrePersist
     public void PrePersist() {
-        registration_date = LocalDateTime.now();
+        registrationDate = LocalDateTime.now();
     }
 
 }
