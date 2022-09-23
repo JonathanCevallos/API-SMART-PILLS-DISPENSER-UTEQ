@@ -53,6 +53,9 @@ public class Carer {
     @Column(name = "birth_date")
     private Date birthDate;
 
+    @Column(name = "gender", length = 10)
+    private String gender;
+
     @PrePersist
     public void PrePersist() {
         registrationDate = LocalDateTime.now();
