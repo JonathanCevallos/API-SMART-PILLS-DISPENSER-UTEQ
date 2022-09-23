@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface CarerRepository extends JpaRepository<Carer, Integer> {
     public Carer findCarerByEmail(String email);
 
-   // public Boolean existsCarerByEmailAndEmailEqualsAndVerification_codeEquals (String email);
+    //public Boolean existsCarerByEmailAndEmailEqualsAAndPassword(String email);
+
 }

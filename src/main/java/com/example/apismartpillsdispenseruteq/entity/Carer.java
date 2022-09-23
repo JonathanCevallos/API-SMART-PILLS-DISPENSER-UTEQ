@@ -46,6 +46,11 @@ public class Carer {
     @Column(name = "url_image")
     private String urlImage;
 
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @Column(name = "birth_date")
+    private Date birthDate;
+
     @PrePersist
     public void PrePersist() {
         registrationDate = LocalDateTime.now();

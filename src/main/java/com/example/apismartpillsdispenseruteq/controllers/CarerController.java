@@ -61,7 +61,6 @@ public class CarerController {
         }
     }
 
-
     //ELIMINAR
     @DeleteMapping(value =  "{id}")
     public ResponseEntity<Boolean> delete (@PathVariable int id)
