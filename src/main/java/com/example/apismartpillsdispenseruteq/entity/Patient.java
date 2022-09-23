@@ -38,12 +38,8 @@ public class Patient {
     @Column(name = "birth_date")
     private Date birthDate;
 
-
-    //@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    //@JoinColumn(name = "id_carer")
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    //Carer carer;
-
+    @Column(name = "url_image")
+    private String urlImage;
 
     @ManyToOne
     @JoinColumn(name = "id_carer")
